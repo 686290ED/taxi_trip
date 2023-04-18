@@ -5,7 +5,7 @@
 with
     stations_in_range as (
         select *
-        from `bigquery-public-data.ghcn_d.ghcnd_stations`
+        from {{ ref("src_ghcn_stations") }}
         where
             latitude
             between {{ coordinate_range["min_latitude"] }}

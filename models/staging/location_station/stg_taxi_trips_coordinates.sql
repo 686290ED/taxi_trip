@@ -6,7 +6,7 @@ with
             pickup_location as location,
             pickup_latitude as latitude,
             pickup_longitude as longitude
-        from `bigquery-public-data.chicago_taxi_trips.taxi_trips`
+        from {{ ref('src_taxi_trips_all' )}}
     ),
 
     dropoff_coord as (
@@ -14,7 +14,7 @@ with
             dropoff_location as location,
             dropoff_latitude as latitude,
             dropoff_longitude as longitude
-        from `bigquery-public-data.chicago_taxi_trips.taxi_trips`
+        from {{ ref('src_taxi_trips_all' )}}
     ),
 
     coord as (

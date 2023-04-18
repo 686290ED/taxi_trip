@@ -6,7 +6,7 @@ left join
     {{ ref("stg_taxi_trips_coordinates__station") }} as station
     on trip.pickup_location = station.trip_location
 left join
-    `bigquery-public-data.ghcn_d.ghcnd_2022` as wx
+    {{ ref('src_ghnc_2022') }} as wx
     on station.id = wx.id
     and extract(date from trip.trip_start_timestamp) = wx.date
     and wx.qflag is null

@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: chicago_taxi_trips
+    description: This dataset includes taxi trips from 2013 to the present, reported to the City of Chicago in its role as a regulatory agency.
+    tables:
+      - name: taxi_trips
+
+  - name: ghcn_daily
+    database: ghcn_d
+    schema: bigquery-public-data
+    description: global daily weather 
+    tables:
+      - name: ghcnd_stations
+      - name: ghcnd_2021
+      - name: ghcnd_2022
+  
+  - name: cycle
+    tables:
+      - name: daily_cycle

@@ -32,9 +32,10 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
-  staging:
-    location_station:
-      +materialized: table
-    
-    trips_weather_2022:
-      +materialized: table
+  chicago_taxi_trips_analysis:
+    staging:
+      location_station:
+        +materialized: table
+      
+      trips_weather_2022:
+        +materialized: table

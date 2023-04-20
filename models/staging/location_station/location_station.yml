@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: stg_stations_in_range
+    description: weather stations cover chicago region
+
+    columns:
+      - name: id
+      - name: latitude
+      - name: longitude
+      - name: elevation
+      - name: state
+      - name: name
+      - name: gsn_flag
+      - name: hcn_crn_flag
+      - name: wmoid
+      - name: source_url
+      - name: etl_timestamp
+
+  - name: stg_taxi_trips_coordinates
+    description: distinct census tract coordination points in chicago
+    columns:
+      - name: location
+      - name: latitude
+      - name: longitude
+
+  - name: stg_taxi_trips_coordinates__station
+    description: distinct census tract coordination points with closest weather station infomation
+    columns:
+      - name: trip_location
+      - name: trip_latitude
+      - name: trip_longitude
+      - name: name
+      - name: id
+      - name: state
+      - name: station_latitude
+      - name: station_longitude
+      - name: distance_in_meters

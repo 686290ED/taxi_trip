@@ -1,4 +1,3 @@
--- payment_type ratio change over year
 with
     yr_t as (
         select yr, payment_type, count(*) over (partition by yr) as yr_cnt

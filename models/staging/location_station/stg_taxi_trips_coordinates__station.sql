@@ -1,5 +1,3 @@
-{{ config(materialized="table") }}
-
 with
     loc_combined_station as (
         select
@@ -57,6 +55,6 @@ with
         from station_distance
     ),
 
-    coor_station as (select * from coor_station_rn where rn = 1)
+    coor_station as (select * except (rn) from coor_station_rn where rn = 1)
 select *
 from coor_station

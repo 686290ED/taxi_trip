@@ -1,5 +1,3 @@
-{{ config(materialized="table") }}
-
 with
     pickup_coord as (
         select distinct

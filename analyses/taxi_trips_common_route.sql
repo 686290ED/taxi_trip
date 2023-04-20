@@ -1,4 +1,3 @@
--- top 5 common route in the last 2 years
 select
     pickup_location,
     dropoff_location,

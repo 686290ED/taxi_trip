@@ -1,4 +1,3 @@
--- std precipitation of stations across Chicago each day in 2022
 with
     prcp_across as (
         select

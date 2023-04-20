@@ -1,11 +1,9 @@
-{{ config(materialized="table") }}
-
 {% set coordinate_range = get_coordinate_range() %}
 
 with
     stations_in_range as (
         select *
-        from {{ ref("src_ghcn_stations") }}
+        from {{ source('weather', 'ghcnd_stations') }}
         where
             latitude
             between {{ coordinate_range["min_latitude"] }}

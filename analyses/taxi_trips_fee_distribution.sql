@@ -1,5 +1,5 @@
 with
-    -- taxi fee distribution over the last 2 years
+    
     fee_distr as (
         select
             {%- for percentile in [0, 0.1, 0.25, 0.5, 0.75, 0.9, 1] %}
@@ -9,8 +9,7 @@ with
             {%- else %} percentile{{ (percentile * 100) | int }},
             {% endif -%}
             {% endfor %}
-        from {{ ref("src_taxi_trips_all") }}
-        where extract(year from trip_start_timestamp) >= 2021
+        from {{ ref("stg_trips_2021") }}
         limit 1
     ),
 
@@ -32,7 +31,6 @@ with
     ),
 
     daily_income_distr as (select approx_quantiles(daily_total, 8) from daily_income)
--- [0.0, 92.4, 142.25, 186.1, 227.78, 273.85, 329.34000000000003, 413.42,
--- 110210.41999999998]
+
 select *
 from daily_income_distr

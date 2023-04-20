@@ -1,4 +1,3 @@
--- taxis have started since 202101
 select taxi_id
 from {{ ref("src_taxi_trips_all") }}
 where

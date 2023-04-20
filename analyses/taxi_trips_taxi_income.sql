@@ -1,4 +1,3 @@
--- taxi_id with top 5 income each year
 with
     yr_income as (
         select

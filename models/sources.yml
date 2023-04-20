@@ -1,0 +1,16 @@
+version: 2
+sources:
+  - name: chicago_taxi_trips
+    database: bigquery-public-data
+    schema: chicago_taxi_trips
+    tables:
+      - name: taxi_trips
+  
+  - name: weather
+    database: bigquery-public-data
+    schema: ghcn_d
+    tables:
+      - name: ghcnd_2022
+      - name: ghcnd_stations
+  
+

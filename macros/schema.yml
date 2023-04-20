@@ -1,0 +1,5 @@
+version: 2
+
+macros:
+  - name: get_coordinate_range
+    description: A macro to get latitude and longitude range of chicago returns a dict

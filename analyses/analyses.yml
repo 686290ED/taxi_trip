@@ -1,0 +1,24 @@
+version: 2
+
+analyses:
+  - name: weather_diff_across
+    description: precipitation std of stations across Chicago each day in 2022 and distribution
+
+  - name: taxi_trips_extreme_rate
+    description: extreme second trip rate to eliminate strange data
+
+  - name: taxi_trips_common_route
+    description: top 5 common routes since 202101
+  
+  - name: taxi_trips_taxi_income
+    description: taxi_id with top 5 income each year
+
+  - name: taxi_trips_payment_type_trend
+    description: payment_type ratio change over year
+
+  - name: taxi_trips_fee_distribution
+    description: taxi trips fee / number / daily income distribution since 202101 
+
+  - name: taxi_trips_high_income_fee_distr
+    description: taxi trips fee / number / daily income distribution since 202101 of top 100 income taxis
+
